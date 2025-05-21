@@ -118,14 +118,11 @@
         }
 
         .feature-card {
-            display:flex;
-            align-items: center;
-            justify-content: center;
             border: 1px #0071e3 dotted;
             flex: 0 0 380px;
             scroll-snap-align: center;
             background-color: var(--bg-main);
-            border-radius: 20px;
+            border-radius: 16px;
             padding: 2.5rem;
             min-height: 520px;
             box-shadow: var(--shadow-md);
@@ -138,11 +135,14 @@
         }
 
         .reel-card {
-            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* border: 1px solid #0071e3; */
             flex: 0 0 380px;
             scroll-snap-align: center;
             background-color: var(--bg-main);
-            border-radius: 16px;
+            border-radius: 20px;
             padding: 2.5rem;
             min-height: 520px;
             box-shadow: var(--shadow-md);
@@ -259,6 +259,9 @@
                 padding: 0.5rem;
             }
         }
+        hr{
+            border: 0.5px black #0071e3;
+        }
     </style>
 </head>
 
@@ -271,9 +274,7 @@
         <h1>Good Explanation</h1>
         <a href="pay.html" class="header-button">Buy Now</a>
     </header>
-
-    <!-- FIRST SECTION: Reels horizontal scroll -->
-    <section>
+  <section>
         <div class="features-container">
             <div class="features-grid">
                 <div class="reel-card">
@@ -281,16 +282,16 @@
                         title="YouTube video player" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowfullscreen
-                        style=" width: 100%; height: 100%; border: none; border-radius: 20px;">
+                        style=" border: 1px solid black; border-radius: 20px;">
                     </iframe>
                 </div>
 
                 <div class="reel-card">
                     <iframe loading="lazy" width="100%" height="100%" src="https://www.youtube.com/embed/lN3Jvf_chEU"
                         title="YouTube video player" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allow="autoplay; "
                         allowfullscreen
-                        style=" width: 100%; height: 100%; border: none; border-radius: 20px;">
+                        style="border: 1px solid black; border-radius: 20px;">
                     </iframe>
                 </div>
 
@@ -299,13 +300,12 @@
                         title="YouTube video player" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowfullscreen
-                        style="width: 100%; height: 100%; border: none; border-radius: 20px;">
+                        style=" width: 100%; height: 100%; border: none; border-radius: 20px;">
                     </iframe>
                 </div>
             </div>
         </div>
     </section><hr>
-
     <!-- SECOND SECTION: left-to-right scroll -->
     <section>
         <div class="features-container">
@@ -333,7 +333,8 @@
                 
             </div>
         </div>
-    </section><hr>
+    </section>
+    <hr>
     <!-- THIRD SECTION: Additional Feature Cards -->
 <section>
     <div class="features-container">
