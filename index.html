@@ -108,13 +108,11 @@
         .reel-grid {
             display: flex;
             justify-content: center;
+            align-items: center;
             overflow-x: auto;
             -webkit-overflow-scrolling: touch;
             gap: 3rem;
-            padding-left: max(2rem, calc((100% - 1400px) / 2));
-            padding-right: max(2rem, calc((100% - 1400px) / 2));
-            padding-bottom: 2rem;
-            padding-top: 2rem;
+            padding: 3rem max(2rem, calc((100% - 1400px) / 2));
             scrollbar-width: none;
             -ms-overflow-style: none;
         }
@@ -125,49 +123,85 @@
 
         .reel-card {
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
+            align-items: center;
             flex-shrink: 0;
-            width: 520px;
-            max-width: 520px;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            border-radius: 32px;
-            padding: 2.5rem;
-            min-height: 780px;
-            box-shadow:
-                0 10px 25px rgba(0, 0, 0, 0.1),
-                0 20px 60px rgba(0, 0, 0, 0.05),
-                0 0 0 1px rgba(255, 255, 255, 0.1);
-            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            width: 800px;
+            max-width: 800px;
+            height: 450px;
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
             overflow: hidden;
-            border: 2px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid #f0f0f0;
         }
 
         .reel-card:hover {
-            transform: translateY(-15px) scale(1.03);
-            box-shadow:
-                0 20px 40px rgba(0, 0, 0, 0.15),
-                0 40px 80px rgba(0, 0, 0, 0.08),
-                0 0 0 1px rgba(255, 255, 255, 0.2);
-            border-color: rgba(255, 255, 255, 0.4);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
         }
 
         .video-container {
-            flex: 1;
-            border-radius: 20px;
+            width: 100%;
+            height: 100%;
+            border-radius: 12px;
             overflow: hidden;
             background: #000;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-            
+            box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
         }
 
         .reel-card iframe {
             border: none;
-            border-radius: 20px;
+            border-radius: 12px;
             width: 100%;
             height: 100%;
-            min-height: 350px;
             background-color: transparent;
+        }
+
+        .video-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-left: 1rem;
+        }
+
+        .video-title {
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            letter-spacing: -0.01em;
+            line-height: 1.3;
+            margin-bottom: 0.5rem;
+        }
+
+        .video-description {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+        }
+
+        .video-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: var(--text-primary);
+            color: white;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .video-cta:hover {
+            background: #000;
+            transform: translateY(-1px);
         }
 
         .feature-card {
@@ -275,10 +309,17 @@
             margin-right: auto;
         }
 
+        @media (max-width: 1200px) {
+            .reel-card {
+                width: 700px;
+                height: 400px;
+            }
+        }
+
         @media (max-width: 1024px) {
             .reel-card {
-                width: 450px;
-                min-height: 720px;
+                width: 600px;
+                height: 340px;
             }
         }
 
@@ -289,22 +330,22 @@
             }
 
             .reel-card {
-                width: 360px;
-                padding: 2rem;
-                min-height: 650px;
+                width: 420px;
+                height: 240px;
+                padding: 1rem;
             }
 
             .reel-grid {
-                padding-right: 1rem;
+                padding: 2rem 1rem;
                 gap: 2rem;
             }
         }
 
         @media (max-width: 480px) {
             .reel-card {
-                width: 320px;
-                min-height: 600px;
-                padding: 1.5rem;
+                width: 400px;
+                height: 250px;
+                padding: 0.8rem;
             }
         }
     </style>
@@ -357,7 +398,7 @@
                     <h3 class="feature-title">Chief-Guests</h3>
                     <p class="feature-text">Our chief guests are among the world's best problem solvers, bringing
                         unique
-                        insights you won't find elsewhere.</p>
+                        insights you won't find elsewhere.Get ability to network with the world best problem solver friends of naval ravikant (a billioner investor) and David Deutsch(father of quantum computing)</p>
                 </div>
 
                 <div class="feature-card">
