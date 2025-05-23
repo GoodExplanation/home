@@ -70,6 +70,47 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         .option button:hover {
             background: #000;
         }
+
+      .info-tooltip {
+    position: relative;
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: bold;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: #ccc;
+    color: #000;
+    text-align: center;
+    line-height: 18px;
+    cursor: pointer;
+    margin-left: 6px;
+}
+
+.tooltip-text {
+    visibility: hidden;
+    width: 260px;
+    background-color: #333;
+    color: #fff;
+    text-align: left;
+    border-radius: 6px;
+    padding: 0.75rem;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+
+.info-tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
     </style>
 </head>
 
@@ -82,11 +123,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <p style="font-size: 0.9rem; margin-top: -2rem; color: #555;">Good Explanation cohort starts on June 1</p>
 
 
-    <div class="option">
+     <div class="option">
         <h2>Try Before You Buy</h2>
-        <p>Experience a free trial. Decide later.</p>
+        <p>
+            Experience a free trial. Decide later.
+            <span class="info-tooltip">?
+                <span class="tooltip-text">
+                    You can try a few sessions from our cohort before making a purchase decision. Just pay ₹99 to get
+                    access—this nominal fee ensures a secure and scam-free environment for all participants.
+                </span>
+            </span>
+
+        </p>
         <a href="https://rzp.io/rzp/GoodExplanation99" rel="noopener noreferrer">
-            <button>Pay Now ₹99 </button>
+            <button>Start Free Trial</button>
         </a>
     </div>
 
