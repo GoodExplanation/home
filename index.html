@@ -2,31 +2,11 @@
 <html lang="en">
 
 <head>
-    <!-- Google Tag Manager -->
-    <script>(function (w, d, s, l, i) {
-            w[l] = w[l] || []; w[l].push({
-                'gtm.start':
-                    new Date().getTime(), event: 'gtm.js'
-            }); var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-5NT43NRH');</script>
-    <!-- End Google Tag Manager -->
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16861746806"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'AW-16861746806');
-    </script>
-    <!-- ------- -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Good Explanation</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
 
         :root {
             --bg-main: #ffffff;
@@ -34,7 +14,6 @@
             --text-primary: #1d1d1f;
             --text-secondary: #6e6e73;
             --accent: #0071e3;
-            --accent-light: #e8f3ff;
             --border: #e2e2e2;
         }
 
@@ -44,19 +23,28 @@
             padding: 0;
         }
 
+        html, body {
+            height: 100%;
+        }
+
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Inter', sans-serif;
             background-color: var(--bg-main);
             color: var(--text-primary);
             line-height: 1.5;
-            -webkit-font-smoothing: antialiased;
             overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
             padding: 1.5rem max(1.5rem, calc((100% - 1400px) / 2));
             background-color: rgba(255, 255, 255, 0.95);
             position: sticky;
@@ -69,216 +57,60 @@
         header h1 {
             font-size: 1.5rem;
             font-weight: 600;
-            letter-spacing: -0.01em;
         }
 
         .header-button {
-            padding: 0.6rem 1.2rem;
-            background-color: var(--accent);
+            display: inline-block;
+            padding: 1rem 6.5rem;
+            background-color: #61CE70;
             color: white;
-            font-size: 0.9rem;
-            font-weight: 500;
-            border-radius: 6px;
+            font-size: 1.5rem;
+            font-weight: 600;
+            border-radius: 8px;
             text-decoration: none;
-            transition: all 0.2s ease;
+            transition: 0.2s;
+            margin-top: 1rem;
         }
 
-        .header-button:hover {
-            background-color: #0062c5;
-            transform: translateY(-1px);
-        }
-
-        section {
-            padding: 1rem max(1.5rem, calc((100% - 1400px) / 2));
+        .center-button {
+            text-align: center;
+            margin-bottom: 16rem;
         }
 
         .features-container {
-            width: 100%;
             padding: 2rem 0;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
         }
 
         .reel-grid {
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-            gap: 3rem;
-            padding: 3rem max(2rem, calc((100% - 1400px) / 2));
-            scrollbar-width: none;
-            -ms-overflow-style: none;
-        }
-
-        .reel-grid::-webkit-scrollbar {
-            display: none;
+            gap: 2rem;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
         }
 
         .reel-card {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            flex-shrink: 0;
-            width: 800px;
-            max-width: 800px;
-            height: 450px;
-            background: #ffffff;
-            border-radius: 16px;
-            padding: 1.5rem;
-            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
-            transition: all 0.3s ease;
-            overflow: hidden;
-            border: 1px solid #f0f0f0;
-        }
-
-        .reel-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-        }
-
-        .video-container {
             width: 100%;
-            height: 100%;
-            border-radius: 12px;
-            overflow: hidden;
-            background: #000;
-            box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
+            max-width: 1400px;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .reel-card iframe {
-            border: none;
-            border-radius: 12px;
+            border: 2px solid #61CE70;
+            border-radius: 15px;
             width: 100%;
-            height: 100%;
-            background-color: transparent;
+            height: 450px;
         }
 
-        .video-content {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding-left: 1rem;
-        }
-
-        .video-title {
-            font-size: 2rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            letter-spacing: -0.01em;
-            line-height: 1.3;
-            margin-bottom: 0.5rem;
-        }
-
-        .video-description {
-            font-size: 1rem;
-            color: var(--text-secondary);
-            line-height: 1.6;
-            font-weight: 400;
-            margin-bottom: 1.5rem;
-        }
-
-        .video-cta {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.75rem 1.5rem;
-            background: var(--text-primary);
-            color: white;
-            font-size: 0.9rem;
-            font-weight: 500;
-            border-radius: 8px;
-            text-decoration: none;
-            transition: all 0.2s ease;
-        }
-
-        .video-cta:hover {
-            background: #000;
-            transform: translateY(-1px);
-        }
-
-        .feature-card {
-            background: linear-gradient(135deg, #ffffff 0%, #f8faff 100%);
-            border-radius: 24px;
-            padding: 3rem;
-            min-height: 520px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            overflow: hidden;
-            border: 1px solid rgba(0, 113, 227, 0.08);
-        }
-
-        .feature-card:hover {
-            transform: translateY(-12px) scale(1.02);
-            box-shadow: 0 20px 48px rgba(0, 0, 0, 0.15);
-            border-color: rgba(0, 113, 227, 0.15);
-        }
-
-        .feature-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, var(--accent-light) 0%, rgba(0, 113, 227, 0.1) 100%);
-            color: var(--accent);
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 2rem;
-            font-size: 2rem;
-            box-shadow: 0 8px 24px rgba(0, 113, 227, 0.2);
-            transition: all 0.3s ease;
-        }
-
-        .feature-card:hover .feature-icon {
-            transform: scale(1.1) rotate(5deg);
-            box-shadow: 0 12px 32px rgba(0, 113, 227, 0.3);
-        }
-
-        .feature-title {
-            font-size: 1.5rem;
-            margin-bottom: 1.2rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            letter-spacing: -0.02em;
-        }
-
-        .feature-text {
-            color: var(--text-secondary);
-            font-size: 1.05rem;
-            line-height: 1.7;
-            font-weight: 400;
-        }
-
-        .faq-container {
-            max-width: 800px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .faq-container details {
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 1rem;
-            background-color: var(--bg-subtle);
-        }
-
-        .faq-container summary {
-            font-weight: 600;
-            cursor: pointer;
-        }
-
-        .faq-container p {
-            margin-top: 0.75rem;
-            color: var(--text-secondary);
+        hr {
+            border: none;
+            border-top: 1px solid var(--border);
+            margin: 3rem auto;
+            max-width: 1400px;
         }
 
         footer {
@@ -291,7 +123,7 @@
         }
 
         footer a {
-            color: var(--accent);
+            color: inherit;
             text-decoration: none;
             margin-left: 0.5rem;
         }
@@ -300,157 +132,68 @@
             text-decoration: underline;
         }
 
-        hr {
-            border: none;
-            border-top: 1px solid var(--border);
-            margin: 3rem 0;
-            max-width: 1400px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        @media (max-width: 1200px) {
-            .reel-card {
-                width: 700px;
-                height: 400px;
-            }
-        }
-
-        @media (max-width: 1024px) {
-            .reel-card {
-                width: 600px;
-                height: 340px;
-            }
-        }
-
         @media (max-width: 768px) {
-            .feature-card {
-                padding: 2rem;
-                min-height: 480px;
-            }
-
             .reel-card {
-                width: 420px;
-                height: 240px;
+                width: 100%;
                 padding: 1rem;
             }
 
-            .reel-grid {
-                padding: 2rem 1rem;
-                gap: 2rem;
+            .reel-card iframe {
+                height: 250px;
             }
         }
 
-        @media (max-width: 480px) {
+        @media (min-width: 1024px) {
+            .reel-card iframe {
+                height: 600px;
+            }
+
             .reel-card {
-                width: 390px;
-                height: 270px;
-                padding: 0.8rem;
+                min-height: 650px;
+            }
+
+            .center-button {
+                margin-top: 6rem;
+            }
+
+            .header-button {
+                padding-left: 9rem;
+                padding-right: 9rem;
+                font-size: 1.75rem;
+            }
+
+            .reel-grid {
+                padding-left: max(1.5rem, calc((100% - 1400px) / 2));
+                padding-right: max(1.5rem, calc((100% - 1400px) / 2));
             }
         }
     </style>
 </head>
 
 <body>
-     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5NT43NRH" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-
     <header>
         <h1>Good Explanation</h1>
-        <a href="choose.html" class="header-button">Buy Now</a>
     </header>
 
-    <div class="features-container">
-        <div class="features-grid reel-grid" id="reelGrid">
-            <div class="reel-card">
-                <div class="video-container">
-                    <iframe loading="lazy" width="100%" height="100%" src="https://www.youtube.com/embed/IU3Lh6309CE"
-                        title="YouTube video player" frameborder="0"
+    <main>
+        <div class="features-container">
+            <div class="reel-grid">
+                <div class="reel-card">
+                    <iframe loading="lazy" src="https://www.youtube.com/embed/IU3Lh6309CE" title="YouTube video player"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share">
                     </iframe>
                 </div>
             </div>
         </div>
-    </div>
 
-    <section>
-        <div class="features-container">
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">♾️</div>
-                    <h3 class="feature-title">100% Refund Policy</h3>
-                    <p class="feature-text">Unlike others who limit refunds to 30 days, we offer a lifetime
-                        money-back
-                        guarantee with no questions asked.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🔍</div>
-                    <h3 class="feature-title">Try Before You Buy</h3>
-                    <p class="feature-text">You can try a few sessions from our cohort before making a purchase
-                        decision. Just pay ₹9 to get access—This nominal fee ensures a secure and scam-free
-                        environment
-                        for all participants.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🎤</div>
-                    <h3 class="feature-title">Chief-Guests</h3>
-                    <p class="feature-text">Our chief guests are among the world's best problem solvers, bringing
-                        unique
-                        insights you won't find elsewhere.Get ability to network with the world best problem solver friends of naval ravikant (a billioner investor) and David Deutsch(father of quantum computing)</p>
-                </div>
+        <div class="center-button">
+            <a href="https://wa.me/919855696486?text=Hello" class="header-button">Join Now</a>
+        </div>
 
-                <div class="feature-card">
-                    <div class="feature-icon"> ↩️ </div>
-                    <h3 class="feature-title">Not Only Refund</h3>
-                    <p class="feature-text">If our program doesn't level you up, we'll cover the cost of any
-                        resource
-                        you believe will help you succeed.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🎖️</div>
-                    <h3 class="feature-title">PhD level design</h3>
-                    <p class="feature-text">This program was originally crafted for PhD researchers solving complex,
-                        high-stakes problems. Now, we're opening it to everyone who wants to: Become sharper,
-                        smarter—and solve the problem keeping you up at night.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🎥</div>
-                    <h3 class="feature-title">YouTube for free</h3>
-                    <p class="feature-text">You can learn anything on YouTube for free — but we're confident you
-                        won't
-                        find anything close to our live cohort. Try this cohort, and if at any point you feel, "I
-                        could
-                        have learned this for free on YouTube," you'll get a full refund — no questions.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <hr>
-    <section class="faq">
-        <div class="faq-container">
-            <details>
-                <summary>How many seats are Available?</summary>
-                <p>I work directly with every student in a live cohort, so seats are limited due to my time
-                    constraints.
-                    I can only take on a few serious learners-secure your spot today before it's too late!</p>
-            </details>
-            <details>
-                <summary>What is the price of the cohort?</summary>
-                <p>Price of Good Explanation Cohort is ₹1998. But Try before you buy is available</p>
-            </details>
-            <details>
-                <summary>What's the duration of the cohort?</summary>
-                <p>This is a 1-month program featuring 10 live sessions. We don't follow a rigid timetable—instead,
-                    we
-                    coordinate with all participants to set session times that suit everyone's availability.</p>
-            </details>
-        </div>
-    </section>
+    </main>
 
     <footer>
-        © 2025 Good Explanation. All rights reserved.
+        © 2025 Recovery
         <a href="terms.html">Terms & Services</a>
     </footer>
 
